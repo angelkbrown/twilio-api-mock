@@ -11,24 +11,33 @@ The `TwilioApiMock::Messages` class requires a redis instance to be passed in du
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'twilio_api_mock'
+gem 'twilio_api_mock', git: 'git@github.com:angelkbrown/twilio-api-mock.git'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install twilio_api_mock
-
 ## Usage
 
-While the twilio-ruby create message method does not take `date_sent`, having the ability to set that parameter is useful since this gem is to designed for use during development.
+If you don't already have a redis instance handy, you can create one.
+```
+require 'redis'
+
+redis_instance = Redis.new
+```
+
+Then create an instance of `TwilioApiMock::Messages`.
 
 ```
 messages = TwilioApiMock::Messages.new(redis_instance)
+```
 
+While the `twilio-ruby` create message method does not take `date_sent`, having the ability to set that parameter is useful since this gem is to designed for use during development.
+
+Note that the create method takes a `Time` object, while the list method takes a string in the format `yyyy-mm-dd`. (This matches the `twilio_ruby` method signatures.)
+
+```
 messages.create(
   to: "+13216851234",
   from: "+15555555555",
@@ -37,7 +46,7 @@ messages.create(
 )
 
 messages.list(
-  to: "+15466758723",
+  to: "+13216851234",
   date_sent: "2017-06-01"
 )
 ```
