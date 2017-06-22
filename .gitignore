@@ -8,5 +8,9 @@
 /spec/reports/
 /tmp/
 
+# ignore vim temp files
+*.swp
+*.swo
+
 # rspec failure tracking
 .rspec_status
