@@ -76,6 +76,8 @@ module TwilioApiMock
     end
 
     # Increment message id
+    # TODO: Slight possibility two messages
+    # could end up with the same id.
     def next_message_id
       if max_message_id = redis.get('max_message_id')
         next_id = max_message_id.to_i + 1
