@@ -1,5 +1,6 @@
 require 'twilio_api_mock/version'
 require 'ostruct'
+require 'time'
 
 module TwilioApiMock
   class Messages
