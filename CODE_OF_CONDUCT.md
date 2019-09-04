@@ -1,4 +1,5 @@
 # Contributor Covenant Code of Conduct
+You should be really nice.
 
 ## Our Pledge
 
