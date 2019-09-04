@@ -1,4 +1,5 @@
 # Contributor Covenant Code of Conduct
+You should be really nice.
 
 ## Our Pledge
 
@@ -10,6 +11,7 @@ nationality, personal appearance, race, religion, or sexual identity and
 orientation.
 
 ## Our Standards
+Such high standards...
 
 Examples of behavior that contributes to creating a positive environment
 include:
